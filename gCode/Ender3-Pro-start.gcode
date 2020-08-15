@@ -21,7 +21,7 @@ M109 S{material_print_temperature} ﻿T0
 
 ; Nozzle Wipe and Retraction
 M117 Nozzle Wipe.
-G1 X4 Y6 Z1.6 F5000.0      ;Go to front
+G1 X0 Y5 Z1.6 F5000.0      ;Go to front
 G92 E0                     ;Reset extruder
 G1  E30 F80                ;Extrude 30mm
 G92 E0                     ;Zero the extruded length
@@ -29,10 +29,11 @@ G1 X0 Y0 Z5.0 F4000 E-20   ;Quickly wipe away and retract
 
 ; Bed Leveling and re-homing
 M117 Bed Leveling.
-G29                   ; Auto bed-level (BL-Touch)
+G29 F20 L40 R160 B210 ; Auto bed-level (BL-Touch)
+G28                   ; Re-Home all axes due to termal expansion
 
 ; Start Pre-print sequence
-M117 Prime nozzle.
+M117 Nozzle warm up.
 G92 E0                        ; Reset Extruder
 G1 Z15.0 F3000                ; Move Z Axis up little to prevent scratching of Heat Bed
 G1 X20 Y4 Z10.0 F5000         ; Move to start position
