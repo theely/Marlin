@@ -741,7 +741,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 480 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 488 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -986,11 +986,11 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { 32.4, -34.9, -0.4 }
+#define NOZZLE_TO_PROBE_OFFSET { 32.4, -34.9, -0.68 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 30
+#define PROBING_MARGIN 0
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_SPEED (133*60)
@@ -1123,7 +1123,7 @@
 
 // The size of the print bed
 #define X_BED_SIZE 205
-#define Y_BED_SIZE 220
+#define Y_BED_SIZE 210
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS 0
@@ -1372,8 +1372,8 @@
 
 // Manually set the home position. Leave these undefined for automatic settings.
 // For DELTA this is the top-center of the Cartesian print volume.
-#define MANUAL_X_HOME_POS -7.5
-#define MANUAL_Y_HOME_POS -8
+//#define MANUAL_X_HOME_POS -7.5
+//#define MANUAL_Y_HOME_POS -8
 //#define MANUAL_Z_HOME_POS 0
 
 // Use "Z Safe Homing" to avoid homing with a Z probe outside the bed area.
